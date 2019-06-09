@@ -1,0 +1,41 @@
+{% extends 'portal/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+            <section id="nuestrosproductoslistado">
+                <h2>NUESTROS EMPLEADOS</h2>
+                <div class="contenedor">
+
+                    <table class="table">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">RUN</th>
+                              <th scope="col">Nombres</th>
+                              <th scope="col">Apellidos</th>
+                              <th scope="col">Fecha Nacimiento</th>
+                              <th scope="col">Dirección</th>
+                              <th scope="col">Cargo</th>
+                              <th scope="col">Sueldo</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for employee in employees %}
+                            <tr>
+                              <th scope="row">{{ employee.rut }}</th>
+                              <td>{{ employee.name }}</td>
+                              <td>{{ employee.lastname }}</td>
+                              <td>{{ employee.birth_date }}</td>
+                              <td>{{ employee.address }}</td>
+                              <td>{{ employee.position }}</td>
+                              <td>{{ employee.salary }}</td>
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+
+                </div>
+            </section>
+
+{% endblock %}

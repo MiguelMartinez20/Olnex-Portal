@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Portal Olnex</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'portal/css/fontello.css' %}">
+        <link rel="stylesheet" href="{% static 'portal/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'portal/css/menu.css' %}">
+        <link rel="stylesheet" href="{% static 'portal/css/banner.css' %}">
+        <link rel="stylesheet" href="{% static 'portal/css/info.css' %}">
+        <link rel="stylesheet" href="{% static 'portal/css/productoslista.css' %}">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="contenedor">
+                <a href="http://olnex.pythonanywhere.com/"><h1 id="titulo">&#127968 Portal Olnex</h1></a>
+                <input type="checkbox" id="menu-bar">
+                <label class="icon-menu" for="menu-bar"></label>
+                <nav class="menu">
+                    <a href="http://olnex.pythonanywhere.com/">INICIO</a>
+                    <a href="http://olnex.pythonanywhere.com/admin">INGRESAR</a>
+                    {% if user.is_authenticated and user.is_staff %}
+                    <a href="http://olnex.pythonanywhere.com/admin">CERRAR SESIÓN</a>
+                    {% endif %}
+                </nav>
+            </div>
+        </header>
+
+{% block content %}
+
+{% endblock %}
+
+<footer>
+            <div class="contenedor">
+                <p class="copyright">Olnex Ltda. &copy; 2019</p>
+                <div class="redesociales">
+                    <a class="icon-facebook-circled" href="https://facebook.com/"></a>
+                    <a class="icon-twitter-circled" href="https://twitter.com/"></a>
+                    <a class="icon-instagram-circled" href="http://instagram.com/"></a>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+
+</html>
