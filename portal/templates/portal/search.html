@@ -13,6 +13,7 @@
                     <div class="container">
                       <form method="get">
                         {{ filter.form.as_p }}
+                        <p>Buscar 1-Contrato Indefinido / 2-Contrato Plazo Fijo</p>
                         <button type="submit" class="botoncomprar">Buscar</button>
                       </form>
                     </div>
@@ -26,6 +27,7 @@
                               <th scope="col">Fecha Nacimiento</th>
                               <th scope="col">Dirección</th>
                               <th scope="col">Cargo</th>
+                              <th scope="col">Tipo Contrato</th>
                               <th scope="col">Sueldo</th>
                             </tr>
                           </thead>
@@ -38,6 +40,7 @@
                               <td>{{ employee.birth_date }}</td>
                               <td>{{ employee.address }}</td>
                               <td>{{ employee.position }}</td>
+                              <td>{{ employee.contract }}</td>
                               <td>{{ employee.salary }}</td>
                             </tr>
                             {% endfor %}
